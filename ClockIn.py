@@ -28,4 +28,4 @@ class ClockIn:
 
     def logIn(self):
         time.sleep(2)  # Sleep for two seconds
-        
+
