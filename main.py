@@ -1,5 +1,6 @@
-from tkinter import messagebox
+#!/usr/bin/env python3
 
+from tkinter import messagebox
 from ClockIn import ClockIn
 
 if __name__ == '__main__':
