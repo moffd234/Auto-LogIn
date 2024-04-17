@@ -38,6 +38,12 @@ class ClockIn:
         time.sleep(1)
         login_button.click()
 
+        self.go_to_home_page()
+
+        time.sleep(1)
+        self.get_login_button()
+
+
     def enter_username_password(self) -> None:
         # Enter UN
         username_field = self.driver.find_element(by=By.ID, value="edit-name")
@@ -49,4 +55,13 @@ class ClockIn:
         PWD = os.getenv("PASSWORD")
         password_field.send_keys(PWD)
 
+    def go_to_home_page(self):
+        home_button = self.driver.find_element(by=By.XPATH,
+                                               value='//*[@id="block-bartik-breadcrumbs"]/div/nav/ol/li/a')
+        home_button.click()
 
+    def get_login_button(self):
+        login_button = self.driver.find_element(by=By.XPATH,
+                                                value='//*[@id="block-bartik-content"]'
+                                                      '/div[1]/div[1]/div/div/form/input[4]')
+        login_button.click()
