@@ -43,17 +43,16 @@ class ClockIn:
         time.sleep(1)
         self.get_login_button()
 
-
     def enter_username_password(self) -> None:
         # Enter UN
         username_field = self.driver.find_element(by=By.ID, value="edit-name")
-        UN = os.getenv("USERNAME")
-        username_field.send_keys(UN)
+        username = os.getenv("USERNAME")
+        username_field.send_keys(username)
 
         # Enter PW
         password_field = self.driver.find_element(by=By.ID, value="edit-pass")
-        PWD = os.getenv("PASSWORD")
-        password_field.send_keys(PWD)
+        pwd = os.getenv("PASSWORD")
+        password_field.send_keys(pwd)
 
     def go_to_home_page(self):
         home_button = self.driver.find_element(by=By.XPATH,
